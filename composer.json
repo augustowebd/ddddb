@@ -1,0 +1,21 @@
+{
+    "name": "boloecia/catalogo",
+    "description": "móduglo gerenciado de catalog da bolo e cia",
+    "type": "project",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "Boloecia\\Catalogo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "augustowebd",
+            "email": "augustowebd@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^9.5",
+        "ramsey/uuid": "^4.2"
+    }
+}
