@@ -8,4 +8,13 @@
             <directory suffix="Test.php">./test</directory>
         </testsuite>
     </testsuites>
+    <coverage>
+        <include>
+        <directory suffix=".php">src/</directory>
+        </include>
+        <report>
+        <html outputDirectory="test/output/coverage"/>
+        <text outputFile="test/output/coverage.txt"/>
+        </report>
+    </coverage>
 </phpunit>

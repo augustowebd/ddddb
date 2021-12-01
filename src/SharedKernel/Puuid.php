@@ -19,10 +19,14 @@ class Puuid implements ValueObjectable, PuuidInterface
     public function value()
     {
         return $this->uuid->toString();
+    // @codeCoverageIgnoreStart
     }
+    // @codeCoverageIgnoreEnd
 
     public static function gerarUuid(): self
     {
         return new self(Uuid::uuid4()->toString());
+    // @codeCoverageIgnoreStart
     }
+    // @codeCoverageIgnoreEnd
 }
