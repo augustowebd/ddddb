@@ -1,46 +1,35 @@
 <?php
 
-namespace Boloecia\Catalogo\Domain;
+namespace Boloecia\Catalogo\SharedKernel;
 
-use Boloecia\Catalogo\SharedKernel\Puuid;
+use Boloecia\Catalogo\Domain\ValueObjectable;
+use Boloecia\Catalogo\Domain\CatalogoGrupoProduto;
 
-class CatalogoProduto
+class Produto implements ValueObjectable
 {
-    private array $produtos = [];
-
-    // public function adicionarProduto(Produto $produto): self
-    // {
-    //     $this->produtos[] = $produto;
-
-    //     return $this;
-    // }
-
-
-
-    /* Produto Universally Unique IDentifier * /
-    private PuuidInterface $identificadorProduto;
+    private Puuid $puuid;
     private CatalogoGrupoProduto $grupo;
     private string $nome;
     private float $preco;
     private string $descricao;
 
     public function __construct(
-          PuuidInterface $identificadorProduto
+          Puuid $puuid
         , CatalogoGrupoProduto $grupo
         , string $nome
         , float $preco
         , string $descricao
     ) {
-        $this->identificadorProduto = $identificadorProduto;
+        $this->puuid = $puuid;
         $this->grupo = $grupo;
         $this->nome = $nome;
         $this->preco = $preco;
         $this->descricao = $descricao;
     }
 
-    public function identificadorProduto(): PuuidInterface
+    public function puuid(): Puuid
     {
-        return $this->identificadorProduto;
+        return $this->puuid;
     }
 
     public function grupo(): CatalogoGrupoProduto
@@ -61,6 +50,9 @@ class CatalogoProduto
     public function descricao(): string
     {
         return $this->descricao;
-    } // @codeCoverageIgnore
-    /* */
+    }
+
+    public function value()
+    {
+    }
 }
